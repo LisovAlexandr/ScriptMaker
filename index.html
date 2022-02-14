@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Script maker</title>
+</head>
+<body>
+    <div style="display: flex; justify-content: center; margin-top: 10%;">
+        <textarea style="margin: 10px;" id="input" id="" cols="30" rows="20" placeholder="Введите список сот: 
+0100011
+0100012
+..."></textarea>
+        <textarea style="margin: 10px;" id="template" cols="50" rows="10" placeholder="Введите шаблон в формате:
+rlslp:cell=CELL_NAME; 
+rlstp:cell=CELL_NAME; 
+..."></textarea>
+        <div style="    
+        display: grid;
+        align-content: center;">
+            <input type="button" value="make script" onclick=modify()>
+        </div> 
+        <textarea style="margin: 10px;" placeholder="Результат" id="output" cols="30" rows="20"></textarea>
+        
+    </div>
+    <script>
+        function modify(){
+            let input=document.getElementById('input').value
+            let output=document.getElementById('output')
+            let inputArr=input.split('\n')
+            let arr = [];
+            let template=document.getElementById('template').value;
+            inputArr.forEach(element => {
+                element?arr.push(template.replaceAll('CELL_NAME',element)):"";
+            });
+            output.value=arr.join('\n')
+        }
+    </script>
+</body>
+</html>
