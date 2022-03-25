@@ -1,0 +1,22 @@
+#container {
+    display: flex; 
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 10%;
+    align-items: flex-start;
+}
+textarea,input{
+    margin-left: 5px;
+    margin-right: 5px;
+}
+#info{
+    font-size: small;
+    color: grey;
+    text-align: center;
+    margin-top: 10px;
+}
+#resultBtn{
+    align-self: center;
+}
+.clearBtns{
+}
